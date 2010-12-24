@@ -1,3 +1,20 @@
+/*
+---
+name: ZenCoding
+description:  Wraps zen_parser to generate Elements from zen-coding abbreviations.
+
+license: MIT-style
+
+authors: Jules Bernable
+
+requires:
+- core/1.3:Element
+- https://github.com/sergeche/zen-coding/javascript/zen_parser.js
+
+provides: [ZenCoding, Element.expandAbbreviation]
+
+...
+*/
 ZenCoding = {
   expand: function(abbr)
   {

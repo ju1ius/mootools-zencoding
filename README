@@ -1,0 +1,12 @@
+mootools-zencoding
+==================
+
+Wraps zen_parser to generate Elements from zen-coding abbreviations.
+
+How to use
+----------
+
+$('my-element').expandAbbreviation('ul.nav>li*4>a[href="#foo"]>img[src=http://google.com/logos/2010/culturetour10-res.jpg]+strong{LINK}');
+// or
+var elements = ZenCoding.expand('table>(thead>tr>th{Header}*4)+(tfoot>tr>td[colspan=4]{Footer})+tbody>tr*5>td{Cell}*4');
+$('my-element').adopt(elements);
