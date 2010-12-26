@@ -100,26 +100,26 @@ provides: [ZenCoding, Element.expandAbbreviation, String.expandAbbreviation]
 
   ZenCoding = {};
 
-  ZenCoding.abbr_to_elements = function(abbr)
+  ZenCoding.abbrToElements = function(abbr)
   {
-    var r = [], zen_tree = zen_parser.parse(abbr),
+    var els = new Elements(), zen_tree = zen_parser.parse(abbr),
       children = zen_tree.children, l = children.length;
     for (var i = 0; i < l; i++)
     {
-      r.push(zen_node_to_el(children[i]));
+      els.push(zen_node_to_el(children[i]));
     };
-    return new Elements(r);
+    return els;
   },
-  ZenCoding.abbr_to_html = function(abbr)
+  ZenCoding.abbrToHtml = function(abbr)
   {
-    var r = '', zen_tree = zen_parser.parse(abbr),
+    var html = '', zen_tree = zen_parser.parse(abbr),
       children = zen_tree.children, l = children.length;
     
     for (var i = 0; i < l; i++)
     {
-      r += zen_node_to_html(children[i], 0);
+      html += zen_node_to_html(children[i], 0);
     };
-    return r;
+    return html;
   }
 
 })();
@@ -127,11 +127,11 @@ provides: [ZenCoding, Element.expandAbbreviation, String.expandAbbreviation]
 Element.implement({
   expandAbbreviation: function(abbr)
   {
-    this.adopt(ZenCoding.abbr_to_elements(abbr));
+    this.adopt(ZenCoding.abbrToElements(abbr));
   }
 });
 
 String.expandAbbreviation = function(abbr)
 {
-  return ZenCoding.abbr_to_html(abbr);
+  return ZenCoding.abbrToHtml(abbr);
 }

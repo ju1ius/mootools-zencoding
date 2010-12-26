@@ -1,0 +1,50 @@
+﻿header, section, aside{ display: block; }
+
+body{
+  font: 14px/1.382 "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background: #f9f9f9;
+  color: #313334;
+  margin: 0; padding: 0;
+}
+
+a{
+  color: #6B7B95
+}
+
+header, #main{
+  padding: 0.618em 1.618em;
+}
+
+header {
+  border-bottom: 1px solid #DDDDDD;
+}
+
+#main{
+  background: #f4f5f5 url("http://mootools.net/assets/images/gradient.png") repeat-x;
+  padding-top: 1.618em;
+}
+
+input[type=text]{
+  width: 28em;
+  background: none repeat scroll 0 0 #EEEEEE;
+  border: 1px solid #CCCCCC;
+  padding: 2px;
+}
+
+input[type=submit]{
+  border-radius: 3px; -moz-border-radius: 3px;
+  border: 1px solid #999999;
+  padding: 1px 8px;
+}
+
+#error{
+  background: red;
+  font-weight: bold;
+  margin: 1.618em 0;
+  padding: 0.618em;
+  display: none;
+}
+
+pre{
+  font: 12px/1 Monaco,Consolas,"DejaVu Sans Mono","Courier New",monospace !important;
+}
