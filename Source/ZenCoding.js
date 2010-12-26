@@ -11,7 +11,7 @@ requires:
 - core/1.3:Element
 - https://github.com/sergeche/zen-coding/blob/master/javascript/zen_parser.js
 
-provides: [ZenCoding, Element.expandAbbreviation]
+provides: [ZenCoding, Element.expandAbbreviation, String.expandAbbreviation]
 
 ...
 */
@@ -23,7 +23,7 @@ provides: [ZenCoding, Element.expandAbbreviation]
   ];
   var is_empty = function(tag)
   {
-    return (!tag.text && !tag.children.length) || unary_tags.contains(tag.name);
+    return unary_tags.contains(tag.name);
   };
   var indent = function(depth)
   {
@@ -72,20 +72,20 @@ provides: [ZenCoding, Element.expandAbbreviation]
       var attr = attrs[i];
       str += ' ' + attr.name +'="' + attr.value + '"';
     }
-    str += (u?'/':'') + '>' + "\n";
+    str += (u?'/':'') + '>';
     if(!u)
-    {
-      if(node.text) str +=  indent(depth+1) + node.text + "\n";
-    
-      var children = node.children, cl = children.length;
+    {   
+      var t = node.text, children = node.children, cl = children.length;
+      if(t) str +=  "\n" + indent(depth+1) + node.text + "\n";
       if(cl)
       {
+        if(!t) str += "\n";
         for(var j = 0; j < cl; j++)
         {
           str += zen_node_to_html(children[j], depth+1);
         }
       }
-      str += indent(depth) + '</'+node.name+'>' + "\n";
+      str += (t||cl?indent(depth):'') + '</'+node.name+'>' + "\n";
     }
     if(node.count > 1)
     {
