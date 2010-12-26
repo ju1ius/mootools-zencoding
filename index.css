@@ -27,7 +27,9 @@ header {
   background: #f4f5f5 url("http://mootools.net/assets/images/gradient.png") repeat-x;
   padding-top: 1.618em;
 }
-
+h2{
+  border-bottom: 1px solid #ccc;
+}
 input[type=text]{
   width: 28em;
   background: none repeat scroll 0 0 #EEEEEE;
