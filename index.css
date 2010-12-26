@@ -18,7 +18,11 @@ header, #main{
 header {
   border-bottom: 1px solid #DDDDDD;
 }
-
+#download{
+    position: absolute;
+    right: 105px;
+    top: 3px;
+}
 #main{
   background: #f4f5f5 url("http://mootools.net/assets/images/gradient.png") repeat-x;
   padding-top: 1.618em;
