@@ -9,19 +9,25 @@
 </head>
 <body>
 
-<form action="" id="zen-form">
-  <input type="text" name="abbreviation"
-    placeholder="Enter abbreviation" style="width:30em" />
-  <input type="submit" value="Parse" />
-</form>
-Examples:
-<pre>
-  ul>li*3>h3{Title}+p>em{Paragraph...}
-  a.sample+b[title=Hello]>a+(span{Test}+div>(a>b)+a)+em
-</pre>
-<div id="result">
 
-</div>
+<form action="" id="zen-form">
+  <fieldset>
+    <legend>Enter abbreviation:</legend>
+    <input type="text" name="abbreviation" style="width:30em" />
+    <input type="submit" value="Parse" />
+    <p>
+      <i>Examples:</i><br />
+      ul>li*3>h3{Title}+p>em{Paragraph...}<br />
+      a.sample+b[title=Hello]>a+(span{Test}+div>(a>b)+a)+em
+  </fieldset>
+</form>
+
+<b>Result HTML:</b>
+<div id="result"></div>
+
+<b>Result string:</b>
+<pre id="result-string"></pre>
+
 
 <script type="text/javascript">
 window.addEvent('domready',function()
@@ -29,12 +35,13 @@ window.addEvent('domready',function()
   $('zen-form').addEvent('submit', function(e)
   {
     e.stop();
-    $('result').empty().expandAbbreviation(
-      this.getElement('input[name=abbreviation]').get('value')
-    );
+    var abbr = this.getElement('input[name=abbreviation]').get('value');
+    $('result').empty().expandAbbreviation(abbr);
+    $('result-string').empty().set('text', String.expandAbbreviation(abbr));
   });
 });
 </script>
+
 
 </body>
 </html>
