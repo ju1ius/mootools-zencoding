@@ -1,80 +1,95 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-	<title>ju1ius/mootools-zencoding @ GitHub</title>
-	
-	<style type="text/css">
-		body {
-  		margin-top: 1.0em;
-  		background-color: #7e71b7;
-		  font-family: "Helvetica,Arial,FreeSans";
-  		color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-		h1 { font-size: 3.8em; color: #818e48; margin-bottom: 3px; }
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #818e48; }
-    h3 { text-align: center; color: #818e48; }
-    a { color: #818e48; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-	</style>
-	
+	<meta charset="UTF-8">
+  <title>MooTools - ZenCoding</title>
+  <link rel="stylesheet" href="index.css" />
+  <script src="mootools-core-1.3.js" type="text/javascript"></script>
+  <script src="zen_parser.js" type="text/javascript"></script>
+  <script src="../Source/ZenCoding.js" type="text/javascript"></script>
 </head>
-
 <body>
-  <a href="http://github.com/ju1ius/mootools-zencoding"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
-  <div id="container">
-
-    <div class="download">
-      <a href="http://github.com/ju1ius/mootools-zencoding/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/ju1ius/mootools-zencoding/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="http://github.com/ju1ius/mootools-zencoding">mootools-zencoding</a>
-      <span class="small">by <a href="http://github.com/ju1ius">ju1ius</a></span></h1>
-
-    <div class="description">
-      
-    </div>
-
-    <h2>Authors</h2>
-<p>ju1ius (jules.bernable@laposte.net)<br/><br/>      </p>
-<h2>Contact</h2>
-<p> (jules.bernable@laposte.net)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/ju1ius/mootools-zencoding/zipball/master">zip</a> or
-      <a href="http://github.com/ju1ius/mootools-zencoding/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/ju1ius/mootools-zencoding</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/ju1ius/mootools-zencoding">ju1ius/mootools-zencoding</a>
-    </div>
-
-  </div>
-
+  <header>
+    <h1>MooTools - ZenCoding</h1>
+    <a href="http://github.com/ju1ius/mootools-zencoding">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://assets2.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71?repo=&url=http%3A%2F%2Fs3.amazonaws.com%2Fgithub%2Fribbons%2Fforkme_right_darkblue_121621.png&path=" alt="Fork me on GitHub">
+    </a>
+  </header>
   
+  <div id="main">
+  
+    <section>
+    
+      <h2>Enter Abbreviation:</h2>
+    	<form action="" id="zen-form">
+    	    <input type="text" name="abbreviation" />
+    	    <input type="submit" value="Parse" />
+    	    <p>
+    	      <i>Examples:</i><br />
+    	      ul>li*3>h3{Title}+p>em{Paragraph...}<br />
+    	      table>(thead>tr>th{Header}*4)+(tfoot>tr>td[colspan=4]{Footer})+(tbody>tr*4>td{cell...}*4)
+    	    </p>
+    	</form>
+    	<div id="error"></div>
+    	
+    	<h2>Result HTML:</h2>
+    	<div id="result"></div>
+    	
+    	<h2>Result String:</h2>
+    	<pre id="result-string"></pre>
+      
+      <h2>Sample Usage:</h2>
+      <script src="http://gist.github.com/755576.js?file=mootools-zencoding-sample.js"></script>
+      
+      <h2>Dependencies:</h2>
+      <ul>
+      	<li>core/1.3:Element</li>
+      	<li>
+          <a href="http://github.com/sergeche/zen-coding/blob/master/javascript/zen_parser.js" target="_blank">
+            zen_parser.js
+          </a>
+        </li>
+      </ul>
+      
+      <h2>Download</h2>
+      <p>
+        You can download this project in either
+        <a href="http://github.com/ju1ius/mootools-zencoding/zipball/master">zip</a> or
+        <a href="http://github.com/ju1ius/mootools-zencoding/tarball/master">tar</a> formats.
+      </p>
+      <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+        by running:
+        <pre>$ git clone git://github.com/ju1ius/mootools-zencoding</pre>
+    </p>
+      
+    </section>
+    
+  </div>
+  
+
+<script type="text/javascript">
+window.addEvent('domready',function()
+{
+  var result = $('result'), result_str = $('result-string'), error = $('error');
+  $('zen-form').addEvent('submit', function(e)
+  {
+    e.stop();
+    [error, result, result_str].invoke('empty');
+    error.setStyle('display', 'none');
+    var abbr = this.getElement('input[name=abbreviation]').get('value');
+    try
+    {
+      result.expandAbbreviation(abbr);
+      result_str.set('text', String.expandAbbreviation(abbr));
+    }
+    catch(e)
+    {
+      error.set('text', e).setStyle('display', 'block');
+    }
+  });
+});
+</script>
+
 </body>
 </html>
