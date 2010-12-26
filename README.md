@@ -11,9 +11,9 @@ How to use
     // Parse abbreviation and injects the resulting elements
     $('my-element').expandAbbreviation(abbr);
     // Or return an Elements object containing the generated elements
-    var els = ZenCoding.abbr_to_elements(abbr);
+    var els = ZenCoding.abbrToElements(abbr);
     
     // Parse abbreviation into an HTML string
     var html = String.expandAbbreviation(abbr);
     // Or
-    var html = ZenCoding.abbr_to_html(abbr);
+    var html = ZenCoding.abbrToHtml(abbr);
