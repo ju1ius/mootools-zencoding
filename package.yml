@@ -1,7 +1,6 @@
 name: mootools-zencoding
 author: ju1ius
-category: Interface
-tags: [animation, canvas]
-#docs: http://url.to.docs
-#demo: http://url.to.demo
-#current: 0.5
+category: Native
+tags: [zen coding, html generator]
+docs: http://ju1ius.github.com/mootools-zencoding
+demo: http://ju1ius.github.com/mootools-zencoding
