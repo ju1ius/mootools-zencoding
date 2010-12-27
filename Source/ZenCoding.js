@@ -75,7 +75,7 @@ provides:
       var attr = attrs[i];
       str += ' ' + attr.name +'="' + attr.value + '"';
     }
-    str += (u?'/':'') + '>';
+    str += (u?'/':'') + '>' + (u?"\n":'');
     if(!u)
     {   
       var t = node.text, children = node.children, cl = children.length;
