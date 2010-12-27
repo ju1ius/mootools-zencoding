@@ -8,10 +8,13 @@ license: MIT-style
 authors: Jules Bernable
 
 requires:
-- core/1.3:Element
-- https://github.com/sergeche/zen-coding/blob/master/javascript/zen_parser.js
+- 'core/1.3:Element'
+- 'http://github.com/sergeche/zen-coding/blob/master/javascript/zen_parser.js'
 
-provides: [ZenCoding, Element.expandAbbreviation, String.expandAbbreviation]
+provides:
+- ZenCoding
+- Element.expandAbbreviation
+- String.expandAbbreviation
 
 ...
 */

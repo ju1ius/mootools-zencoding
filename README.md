@@ -5,6 +5,7 @@ Wraps zen_parser to generate Elements from zen-coding abbreviations.
 
 How to use
 ----------
+ZenCoding depends on [zen_parser.js](http://github.com/sergeche/zen-coding/blob/master/javascript/zen_parser.js)
 
     var abbr = 'table>(thead>tr>th{Row Header}*4)+(tfoot>tr>td[colspan=4])+(tbody>tr*4>td{Cell...}*4)';
     
