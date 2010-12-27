@@ -84,7 +84,7 @@ window.addEvent('domready',function()
     e.stop();
     [error, result, result_str].invoke('empty');
     error.setStyle('display', 'none');
-    var abbr = this.getElement('input[name=abbreviation]').get('value');
+    var abbr = this.getElement('input[name=abbreviation]').get('value').trim();
     try
     {
       result.expandAbbreviation(abbr);
